@@ -1,0 +1,247 @@
+.header{
+  position: fixed;
+  height: 52px;
+  background: white;
+  width: 100%;
+  z-index: 10;
+  box-shadow: 0px 2px 16px rgba(0, 36, 69, 0.12);
+  &__logo{
+    height: 52px;
+    padding-top: 6px;
+    &-top{
+      text-transform: uppercase;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 900;
+      font-size: 15px;
+      color: $blue;
+      &:hover{
+        color: $blue;
+      }
+    }
+    p{
+      font-size: 12px;
+      //max-width: 146px;
+      line-height: 130%;
+    }
+  }
+  &__social{
+    display: none;
+    padding-top: 17px;
+    a{
+      display: inline-block;
+      margin-right: 10px;
+      &:last-child{
+        margin-right: 0;
+      }
+      &.header__social-tel{
+        display: none;
+        font-weight: bold;
+        font-size: 20px;
+      }
+    }
+  }
+  &__button{
+    display: none;
+    padding-top: 10px;
+    .def-button{
+      max-width: 190px;
+      margin-left: auto;
+    }
+  }
+  &__menu{
+    display: none;
+    padding-top: 60px;
+    ul{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      li{
+        margin-bottom: 30px;
+        text-align: center;
+        position: relative;
+        width: fit-content;
+        &::after{
+          width: 0;
+          content: '';
+          display: block;
+        }
+        &:hover, &.active{
+          &::after{
+            position: absolute;
+            width: calc(100% + 30px);
+            left: -15px;
+            background: $green;
+            bottom: -5px;
+            max-width: calc(100% + 30px);
+            height: 4px;
+            transition: .3s;
+          }
+        }
+        &:last-child{
+          margin-bottom: 0;
+        }
+      }
+    }
+  }
+  &__burger{
+    height: 52px;
+    .burger{
+      position: absolute;
+      right: 15px;
+      width: 45px;
+      cursor: pointer;
+      top: 50%;
+      transform: translateY(-50%);
+      span{
+        top: 50%;
+        transform: translateY(-50%);
+        &::before{
+          top: -13px;
+        }
+        &::after{
+          top: 13px;
+        }
+      }
+      span, span::after, span::before{
+        position: absolute;
+        width: 100%;
+        background: $blue;
+        height: 5.4px;
+        transition: .3s linear;
+        display: block;
+        content: '';
+      }
+    }
+  }
+
+  &-opened{
+    height: 100vh;
+    overflow-y: scroll;
+    .header{
+      &__social{
+        display: block;
+      }
+      &__button{
+        display: block;
+      }
+      &__menu{
+        display: block;
+      }
+      &__burger{
+        .burger{
+          span{
+            background: transparent;
+            &::before{
+              transform: rotate(45deg);
+              top: 0;
+            }
+            &::after{
+              transform: rotate(-45deg);
+              top: 0;
+            }
+          }
+        }
+      }
+    }
+
+
+  }
+}
+
+@media screen
+and (min-width: 768px){
+  .header {
+    height: 71px;
+    &__burger{
+      height: 71px;
+      .burger{
+        width: 55px;
+        span, span::after, span::before{
+          height: 7px;
+        }
+        span{
+          &::before{
+            top: -17px;
+          }
+          &::after{
+            top: 17px;
+          }
+        }
+      }
+    }
+    &__logo{
+      //height: 71px;
+      &-top{
+        font-size: 20px;
+        display: block;
+        //text-align: center;
+      }
+      p{
+        font-size: 14px;
+        //text-align: center;
+      }
+    }
+    &__social {
+      display: block;
+    }
+    &__menu{
+      padding-top: 187px;
+      ul{
+        li{
+          margin-bottom: 40px;
+        }
+      }
+    }
+    &__button {
+      display: block;
+    }
+    &-opened{
+      height: 100vh;
+    }
+  }
+}
+
+@media screen
+and (min-width: 1200px){
+  .header{
+    height: 95px;
+    &__logo{
+      &-top{
+        font-size: 23px;
+      }
+      p{
+        font-size: 16px;
+      }
+    }
+    &__social{
+      display: flex;
+      a{
+        margin-right: 20px;
+        &.header__social-tel{
+          display: inline-block;
+        }
+      }
+    }
+    &__burger{
+      display: none;
+    }
+    &__button{
+      .def-button{
+        width: 240px;
+        max-width: 240px;
+      }
+    }
+    &__menu{
+      display: block;
+      padding-top: 5px;
+      ul{
+        display: flex;
+        justify-content: space-between;
+        flex-direction: row;
+        li{
+          margin-bottom: 0;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,162 @@
+.def-title{
+  font-family: 'Montserrat', sans-serif;
+  text-transform: uppercase;
+  font-weight: 900;
+  font-size: 25px;
+}
+
+.def-button{
+  line-height: 21px;
+  padding-top: 13px;
+  padding-bottom: 13px;
+  max-width: 100%;
+  border: 2px solid $green!important;
+  border-radius: 30px;
+  color: white;
+  font-weight: 700;
+  text-align: center;
+  transition: .3s;
+  cursor: pointer;
+  background: $green;
+  &:hover{
+    background: white;
+    color: $green;
+  }
+  &.white{
+    background: white;
+    color: $green;
+    &:hover{
+      background: $green;
+      color: white;
+    }
+  }
+}
+
+.item-count{
+  display: flex;
+  align-items: center;
+  margin-bottom: 30px;
+  &:last-child{
+    margin-bottom: 0;
+  }
+  .row{
+    width: 100%;
+  }
+  &__num{
+    span{
+      color: $green;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 45px;
+      font-weight: 300;
+      width: 100%;
+      max-width: 70px;
+      text-align: center;
+      display: block;
+    }
+  }
+  p{
+    margin-top: 10px;
+  }
+}
+
+.def-form{
+  padding: 40px 16px 60px;
+  box-shadow: 0 0 100px rgba(0, 133, 255, 0.2);
+  border-radius: 15px;
+  background: white;
+  .def-form__title{
+    margin-bottom: 40px;
+    text-align: center;
+    font-weight: 500;
+    font-size: 26px;
+    line-height: 30px;
+  }
+  input:not([type='submit']):not([type='checkbox']){
+    //margin-bottom: 25px;
+  }
+  .def-button{
+    margin-top: 15px;
+  }
+}
+
+.ul-list{
+  padding-left: 17px;
+  li{
+    margin-bottom: 15px;
+    font-size: 16px;
+    &:last-child{
+      margin-bottom: 0;
+    }
+    &::before{
+      content: '';
+      display: inline-block;
+      background: $green;
+      border-radius: 50%;
+      width: 7px;
+      height: 7px;
+      margin-right: 10px;
+      margin-left: -17px;
+    }
+  }
+}
+
+.arrow{
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: rgba($green,.2);
+  position: fixed;
+  z-index: 5;
+  display: none;
+  right: 15px;
+  bottom: 20px;
+  cursor: pointer;
+  &:hover{
+    background: rgba($green,.4);
+    svg{
+      path{
+        opacity: .7;
+      }
+    }
+  }
+  div{
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  svg{
+    path{
+      opacity: .4;
+    }
+  }
+}
+
+@media screen
+and (min-width: 768px){
+  .def-title{
+    font-size: 30px;
+  }
+  .item-count{
+    margin-bottom: 50px;
+    &:nth-last-child(-n+2){
+      margin-bottom: 0;
+    }
+  }
+  .def-form{
+    padding-left: 65px;
+    padding-right: 65px;
+  }
+}
+
+@media screen
+and (min-width: 1600px){
+  .def-title{
+    font-size: 35px;
+  }
+  .ul-list{
+    li{
+      font-size: 20px;
+    }
+  }
+}
