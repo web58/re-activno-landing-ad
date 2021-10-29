@@ -13,9 +13,9 @@
       font-family: 'Montserrat', sans-serif;
       font-weight: 900;
       font-size: 15px;
-      color: $blue;
+      color: $red-light;
       &:hover{
-        color: $blue;
+        color: $red-light;
       }
     }
     p{
@@ -70,7 +70,7 @@
             position: absolute;
             width: calc(100% + 30px);
             left: -15px;
-            background: $green;
+            background: $red;
             bottom: -5px;
             max-width: calc(100% + 30px);
             height: 4px;
@@ -105,7 +105,7 @@
       span, span::after, span::before{
         position: absolute;
         width: 100%;
-        background: $blue;
+        background: $red-light;
         height: 5.4px;
         transition: .3s linear;
         display: block;

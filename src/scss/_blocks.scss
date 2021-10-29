@@ -10,23 +10,23 @@
   padding-top: 13px;
   padding-bottom: 13px;
   max-width: 100%;
-  border: 2px solid $green!important;
+  border: 2px solid $red!important;
   border-radius: 30px;
   color: white;
   font-weight: 700;
   text-align: center;
   transition: .3s;
   cursor: pointer;
-  background: $green;
+  background: $red;
   &:hover{
     background: white;
-    color: $green;
+    color: $red;
   }
   &.white{
     background: white;
-    color: $green;
+    color: $red-light;
     &:hover{
-      background: $green;
+      background: $red;
       color: white;
     }
   }
@@ -44,7 +44,7 @@
   }
   &__num{
     span{
-      color: $green;
+      color: $red-light;
       font-family: 'Montserrat', sans-serif;
       font-size: 45px;
       font-weight: 300;
@@ -90,7 +90,7 @@
     &::before{
       content: '';
       display: inline-block;
-      background: $green;
+      background: $red;
       border-radius: 50%;
       width: 7px;
       height: 7px;
@@ -104,7 +104,7 @@
   width: 44px;
   height: 44px;
   border-radius: 50%;
-  background: rgba($green,.2);
+  background: rgba($red,.2);
   position: fixed;
   z-index: 5;
   display: none;
@@ -112,7 +112,7 @@
   bottom: 20px;
   cursor: pointer;
   &:hover{
-    background: rgba($green,.4);
+    background: rgba($red,.4);
     svg{
       path{
         opacity: .7;
@@ -127,6 +127,7 @@
   }
   svg{
     path{
+      stroke: $red-light;
       opacity: .4;
     }
   }

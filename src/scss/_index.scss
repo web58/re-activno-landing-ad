@@ -18,7 +18,7 @@
     }
     p{
       span{
-        color: $green;
+        color: $red-light;
       }
     }
     form{
@@ -92,7 +92,7 @@
       top: 0;
       bottom: 0;
       left: -50vw;
-      background: $blue;
+      background: $red-light;
       z-index: -1;
     }
     .def-title{
@@ -176,7 +176,7 @@
 .conduct{
   padding-top: 36px;
   padding-bottom: 80px;
-  background-color: $blue;
+  background-color: $red-light;
   .def-title{
     color: white;
     margin-bottom: 35px;
@@ -198,7 +198,7 @@
         margin-bottom: 0;
       }
       span{
-        background: $blue;
+        //background: $red-light;
         //width: 51px;
         //height: 51px;
         width: 29px;
@@ -218,7 +218,7 @@
           background: white;
           border-radius: 50%;
           //border: 14.55px solid white;
-          box-shadow: 0 0 10px #0084FF;
+          //box-shadow: 0 0 10px $red;
         }
       }
       &-name{
@@ -242,7 +242,7 @@
         span{
           &::before{
             border: 7px solid white;
-            background: $green;
+            background: $red-light;
           }
         }
       }
@@ -250,7 +250,7 @@
         span{
           &::before{
             border: 7px solid white;
-            background: $green;
+            background: $red-light;
             width: 51px;
             height: 51px;
           }
@@ -260,7 +260,7 @@
   }
   &-content{
     background: #FFFFFF;
-    box-shadow: 0 0 100px rgba(0, 133, 255, 0.2);
+    box-shadow: 0px 0px 100px rgba(252, 147, 50, 0.2);
     border-radius: 25px;
     //padding: 43px 11px 38px;
     display: none;
@@ -287,7 +287,7 @@
       height: 100%;
       &-top{
         border-radius: 30px 30px 0 0;
-        background: $blue;
+        background: $red-light;
         height: 130px;
         display: flex;
         flex-direction: column;
@@ -316,7 +316,7 @@
         font-size: 26px;
       }
       &-price{
-        color: $green;
+        //color: $red;
         font-weight: 700;
         font-size: 45px;
         text-align: center;
@@ -352,7 +352,7 @@
   &-bot{
     padding-top: 50px;
     &__from{
-      color: $green;
+      color: $red-light;
       font-weight: 700;
       font-size: 33px;
       display: flex;
@@ -360,7 +360,7 @@
       justify-content: center;
       font-family: 'Montserrat', sans-serif;
       span{
-        color: $green;
+        color: $red-light;
         font-size: 45px;
         font-weight: 700;
         width: 160px;
@@ -368,7 +368,7 @@
         font-family: 'Montserrat', sans-serif;
       }
       &::after{
-        content: url(./files/imgs/icons/ruble.svg);
+        content: url(./files/imgs/icons/ruble-orange.svg);
         transform: translateY(5px);
       }
     }
@@ -456,7 +456,7 @@
       top: 0;
       bottom: 0;
       left: -50vw;
-      background-color: $blue;
+      background-color: $red-light;
       z-index: -3;
     }
     *{
@@ -502,7 +502,7 @@
           font-family: Montserrat, sans-serif;;
           font-weight: bold;
           font-size: 60px;
-          color: $green;
+          color: $red;
           margin-right: 16px;
           line-height: 1;
         }
@@ -566,12 +566,12 @@
     }
     &-bot{
       //padding-top: 5px;
-      color: $blue;
+      color: $red-light;
       font-size: 26px;
       font-weight: 500;
       display: block;
       &:hover{
-        color: $blue;
+        color: $red-light;
       }
     }
     &-socials{

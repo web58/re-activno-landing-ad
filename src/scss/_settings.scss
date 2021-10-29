@@ -1,9 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500;700;900&family=Roboto:wght@400;500;700&display=swap');
 
 $def-color: rgba(#373737, .93);
-$blue: #42A4FF;
-$blue-light: #8EC9FF;
+$red-light: #42A4FF;
+$red-light-light: #8EC9FF;
 $green: #00AB97;
+
+$red: #E20612;
+$red-light: #F6512C;
 
 *{
   box-sizing: border-box;
@@ -115,7 +118,7 @@ input[type='radio'] {
     border-radius: 50%;
     transform: translate(-50%, -50%);
     background-color: white;
-    border: 1px solid $blue;
+    border: 1px solid $red-light;
   }
   &:checked{
     &::after{
@@ -126,7 +129,7 @@ input[type='radio'] {
       width: 10px;
       height: 10px;
       border-radius: 50%;
-      background-color: $green;
+      background-color: $red;
       transform: translate(-50%, -50%);
       visibility: visible;
     }

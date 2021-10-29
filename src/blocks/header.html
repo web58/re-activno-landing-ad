@@ -11,11 +11,12 @@
     background-color: white;
   }
 
-  #preloader span{
+  #preloader img{
     position: absolute;
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
+    max-width: 200px;
   }
 
   body.visible #preloader{
@@ -35,7 +36,8 @@
 </style>
 
 <div id="preloader" class="visible">
-  <span class="header__logo-top">Контекст shark</span>
+  <!--<span class="header__logo-top">Контекст shark</span>-->
+  <img src="./files/imgs/logo.svg" alt="">
 </div>
 
 <script>
@@ -61,8 +63,9 @@
     <div class="row">
       <div class="header__logo col-9 col-md-4 col-xl-6">
         <a href="#first">
-          <span class="header__logo-top">Контекст shark</span>
-          <p>Интернет агентство полного цикла</p>
+          <!--<span class="header__logo-top">Контекст shark</span>
+          <p>Интернет агентство полного цикла</p>-->
+          <img src="./files/imgs/logo.svg" alt="">
         </a>
       </div>
       <div class="header__burger col-3 col-md-2 order-md-last">
@@ -88,7 +91,7 @@
         </a>
       </div>
       <div class="header__button col-8 col-md-4 col-xl-3 col-xxl-2">
-        <script data-b24-form="click/30/1bt2bi" data-skip-moving="true" data-b24-loaded="true">
+        <script data-b24-form="click/30/1bt2bi" data-skip-moving="true">
           (function(w, d, u) {
             var s = d.createElement('script');
             s.async = true;

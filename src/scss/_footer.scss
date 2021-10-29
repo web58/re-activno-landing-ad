@@ -8,17 +8,24 @@
       font-family: 'Montserrat', sans-serif;
       font-weight: 900;
       font-size: 23px;
-      color: $blue;
+      color: $red-light;
       text-align: center;
       display: block;
       &:hover{
-        color: $blue;
+        color: $red-light;
       }
     }
     p{
       text-align: center;
       font-size: 16px;
       line-height: 130%;
+    }
+
+    img{
+      max-width: 200px;
+      @media (max-width: 767.98px) {
+        margin: 0 auto;
+      }
     }
   }
   &__social{
@@ -90,6 +97,11 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    svg{
+      rect{
+        fill: $red-light;
+      }
+    }
   }
   &__wrap{
     max-width: calc(100% - 18px);
@@ -100,7 +112,7 @@
     //transform: translate(-50%, -50%);
     background-color: #fff;
     //padding: 40px 20px 30px;
-    box-shadow: 0 0 100px rgba(0, 133, 255, 0.2);
+    box-shadow: 0 0 100px rgba($red-light, 0.2);
     border-radius: 25px;
     padding: 43px 11px 38px;
     top: 0;

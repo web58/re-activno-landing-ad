@@ -1,29 +1,8 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!-- Generator: Adobe Illustrator 24.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
-<svg version="1.1" id="Слой_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-	 viewBox="0 0 1277 923.4" style="enable-background:new 0 0 1277 923.4;" xml:space="preserve">
-<style type="text/css">
-	.st0{fill:#42A4FF;}
-	.st1{fill:#0085FF;fill-opacity:0.28;}
-	.st2{fill:#0085FF;fill-opacity:0.52;}
-	.st3{fill:#FFFFFF;fill-opacity:0.13;}
-	.st4{fill:#2492F9;}
-	.st5{fill:#61B3FF;fill-opacity:0.28;}
-</style>
-<path class="st0" d="M1277,0H0v924h845L1277,0z"/>
-<g>
-	<path class="st1" d="M833,0l256,189L1277,0H833z"/>
-</g>
-<g>
-	<path class="st2" d="M733.5,601h263L1113,346L733.5,601z"/>
-</g>
-<g>
-	<path class="st3" d="M735.5,600.5l110,323.5L997,600.5H735.5z"/>
-</g>
-<g>
-	<path class="st4" d="M737,923.5l107.5-1l58-121.5L737,923.5z"/>
-</g>
-<g>
-	<path class="st5" d="M789,5.5L1000.5,586l276-586H789V5.5z"/>
-</g>
+<svg width="1277" height="924" viewBox="0 0 1277 924" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M1277 0H0V924H845L1277 0Z" fill="#FC9332"/>
+<path d="M833 0L1089 189L1277 0H833Z" fill="#F87C36" fill-opacity="0.83"/>
+<path d="M733.5 601H996.5L1113 346L733.5 601Z" fill="#F77C37"/>
+<path d="M735.5 600.5L845.5 924L997 600.5H735.5Z" fill="white" fill-opacity="0.13"/>
+<path d="M737 923.5L844.5 922.5L902.5 801L737 923.5Z" fill="#F86637"/>
+<path d="M789 5.5L1000.5 586L1276.5 0H789V5.5Z" fill="#F5AB4C" fill-opacity="0.56"/>
 </svg>

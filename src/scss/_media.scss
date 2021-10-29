@@ -28,13 +28,16 @@ and (min-width: 768px){
     &-bot{
       padding-top: 74px;
       padding-bottom: 99px;
-      background: linear-gradient(103.86deg, #FFFFFF 50.28%, #F0F8FF 83.23%);
+      //background: linear-gradient(103.86deg, #FFFFFF 50.28%, #F0F8FF 83.23%);
+      background: #FFFAF0;
       position: relative;
-      &::before{
+      overflow-y: hidden;
+
+      /*&::before{
         position: absolute;
         top: 0;
         height: 253px;
-        //box-shadow: 2px 50px 100px rgba(65, 163, 255, 0.1);
+        box-shadow: 2px 50px 100px rgba(65, 163, 255, 0.1);
         content: '';
         background-image: url("./files/imgs/first-back2.png");
         //right: 60%;
@@ -44,7 +47,25 @@ and (min-width: 768px){
         background-repeat: no-repeat;
         background-size: cover;
         background-position-x: right;
+        clip-path: polygon(0% 100%, 0% 0%, 100% 0%, calc(100% - 30px) 100%);
+        background: black;
+        filter: drop-shadow(-1px 6px 3px rgba(50, 50, 0, 0.5));
+      }*/
+
+      &__elem{
+        position: absolute;
+        top: -2px;
+        height: 100px;
+        right: 60%;
+        width: 40%;
+        filter: drop-shadow(2px 50px 100px rgba(240, 126, 19, 0.25));
+        span{
+          padding: 0 100% 100px 0;
+          background: #fff;
+          clip-path: polygon(0% 0%, 100% 0%, 100% 0%, 0% 100%);
+        }
       }
+
       .def-title{
         margin-bottom: 21px;
       }
@@ -283,6 +304,10 @@ and (min-width: 1200px){
     &-bot{
       padding-top: 95px;
       padding-bottom: 80px;
+      &__elem{
+        right: 50%;
+        width: 50%;
+      }
       &::before{
         //right: 50%;
         right: calc(50% - 100px);
@@ -442,7 +467,7 @@ and (min-width: 1200px){
         left: calc((1170px - 100vw) / 2);
         //width: calc(((100vw - 1170px) / 2) + 700px);
         width: calc(50vw - 15px);
-        background-color: $blue;
+        background-color: $red-light;
 
         // for 1600.
 

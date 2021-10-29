@@ -52,13 +52,13 @@
 .contacts a b {
   display: block; }
 .contacts a[href^="tel:"] b:hover {
-  color: $blue; }
+  color: $red-light; }
 .contacts__map-container .contacts__item-bot {
   margin-top: 20px !important; }
 .contacts__item-bot {
   margin-bottom: 16px;
   font-size: 24px;
-  color: $blue; }
+  color: $red-light; }
 .contacts__item-socials {
   margin-top: 16px !important; }
 .contacts__item-socials svg {
@@ -147,3 +147,24 @@
   .contacts .def-button {
     width: 375px;
     margin-top: 40px !important; } }
+
+
+.contacts{
+  &__item{
+    &-inline{
+      svg{
+        path{
+          fill: $red-light;
+        }
+      }
+    }
+    &-socials{
+      svg{
+        rect{
+          fill: $red-light;
+        }
+      }
+    }
+  }
+
+}

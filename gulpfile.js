@@ -7,7 +7,8 @@ const {series, src, dest, watch} = require('gulp'),
   reload = browserSync.reload,
   prefixer = require('gulp-autoprefixer'),
   uglify = require('gulp-uglify'),
-  sass = require('gulp-sass'),
+  //sass = require('gulp-sass'),
+  sass = require('gulp-sass')(require('sass')),
   sourcemaps = require('gulp-sourcemaps'),
   cssmin = require('gulp-minify-css');
 
@@ -64,13 +65,18 @@ function wpJs() {
 
 function js() {
   return src('./src/main.js')
+    .pipe(dest('./build'))
+    .pipe(reload({stream: true}))
+}
+/*function js() {
+  return src('./src/main.js')
     .pipe(rigger())
     .pipe(sourcemaps.init())
     .pipe(uglify())
     .pipe(sourcemaps.write())
     .pipe(dest('./build'))
     .pipe(reload({stream: true}))
-}
+}*/
 
 const config = {
   server: {
@@ -79,7 +85,7 @@ const config = {
   tunnel: false,
   host: 'localhost',
   port: 9000,
-  logPrefix: "dan"
+  logPrefix: "nasya"
 };
 
 function webServer(cb) {

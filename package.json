@@ -1,5 +1,5 @@
 {
-  "name": "hpk",
+  "name": "theme",
   "version": "1.0.0",
   "description": "",
   "main": "gulpfile.js",
@@ -20,6 +20,7 @@
     "gulp-autoprefixer": "*",
     "gulp-minify-css": "*",
     "gulp-rigger": "*",
+    "sass": "*",
     "gulp-sass": "*",
     "gulp-sourcemaps": "*",
     "gulp-uglify": "*",

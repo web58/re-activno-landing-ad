@@ -5,6 +5,7 @@
     border-radius: 30px;
     font-size: 18px;
     width: 100%;
+    background: $red;
   }
   .b24-form-field .b24-form-control{
     border-radius: 30px;
@@ -25,6 +26,15 @@
     font-size: 26px;
     line-height: 30px;
   }
+
+  .b24-form-control-string{
+    .b24-form-control{
+      &:focus{
+        border-color: $red-light;
+      }
+    }
+  }
+
 
   //popup
 
@@ -48,7 +58,7 @@
       &::before, &::after{
         width: 7px;
         height: 56px;
-        background: $blue;
+        background: $red-light;
       }
     }
     @media screen
