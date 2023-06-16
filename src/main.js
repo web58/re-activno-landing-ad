@@ -72,6 +72,10 @@ jQuery(function($) {
       $('.popup_quiz').fadeIn();
     });
 
+    $('.footer-bot__politics').on('click', function () {
+      $('.popup_conf').fadeIn();
+    });
+
     // --- arrow up ---
 
     $(window).on('scroll', function () {
