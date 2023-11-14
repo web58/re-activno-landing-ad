@@ -1,108 +1,68 @@
-'use strict';
+import gulp from 'gulp';
+import browserSync from 'browser-sync';
+import cleanBuildFolder from './inc/clean.mjs';
+import copyAssets from './inc/assets.mjs';
+import compileHTML from './inc/html.mjs';
+import compileCSS from './inc/css.mjs';
+import compileJS from './inc/js.mjs';
+import {
+  copyVendorScripts,
+  optimizeVendorStyles,
+} from './inc/vendor.mjs';
+import {
+  copyRasterGraphics,
+  copyVectorGraphics,
+  compileSprite,
+} from './inc/images.mjs';
 
-const {series, src, dest, watch} = require('gulp'),
-  del = require('delete'),
-  rigger = require('gulp-rigger'),
-  browserSync = require('browser-sync'),
-  reload = browserSync.reload,
-  prefixer = require('gulp-autoprefixer'),
-  uglify = require('gulp-uglify'),
-  //sass = require('gulp-sass'),
-  sass = require('gulp-sass')(require('sass')),
-  sourcemaps = require('gulp-sourcemaps'),
-  cssmin = require('gulp-minify-css');
+const {
+  series,
+  parallel,
+  watch
+} = gulp;
 
-function clean(cb) {
-  del(['./build/files'], cb);
-}
+const BS_SERVER = browserSync.create();
+const refreshServer = ( done ) => {
+  BS_SERVER.reload();
+  done();
+};
+const streamServer = () => compileCSS().pipe( BS_SERVER.stream() );
 
-function cleanAll(cb) {
-  del(['./build/**/*'], cb);
-}
-
-function files() {
-  return src('./src/files/**/*')
-    .pipe(dest('./build/files'))
-}
-
-function html() {
-  return src('./src/*.html')
-    .pipe(rigger())
-    .pipe(dest('./build/'))
-    .pipe(reload({stream: true}))
-}
-
-function styles() {
-  return src('./src/style.scss')
-    // .pipe(sourcemaps.init())
-    .pipe(sass())
-    .pipe(prefixer({
-      cascade: false
-    }))
-    // .pipe(cssmin())
-    // .pipe(sourcemaps.write())
-    .pipe(dest('./build'))
-    .pipe(reload({stream: true}))
-}
-
-function wpScss(cb) {
-  return src('./src/style.scss')
-    .pipe(sass())
-    .pipe(prefixer({
-      cascade: false
-    }))
-    .pipe(dest('./build/wp/'))
-    .pipe(reload({stream: true}))
-    // .pipe(cb())
-}
-
-function wpJs() {
-  return src('./src/main.js')
-    .pipe(rigger())
-    .pipe(dest('./build/wp'))
-    .pipe(reload({stream: true}))
-}
-
-function js() {
-  return src('./src/main.js')
-    .pipe(dest('./build'))
-    .pipe(reload({stream: true}))
-}
-/*function js() {
-  return src('./src/main.js')
-    .pipe(rigger())
-    .pipe(sourcemaps.init())
-    .pipe(uglify())
-    .pipe(sourcemaps.write())
-    .pipe(dest('./build'))
-    .pipe(reload({stream: true}))
-}*/
-
-const config = {
-  server: {
-    baseDir: "./build"
-  },
-  tunnel: false,
-  host: 'localhost',
-  port: 9000,
-  logPrefix: "nasya"
+const syncServer = () => {
+  BS_SERVER.init( {
+    server: {
+      baseDir: './build/'
+    },
+    notify: false,
+    ui: false,
+  } );
+  watch( [ './src/*.html', './src/html/**/*.html' ], series( compileHTML, refreshServer ) );
+  watch( './src/style/**/*.scss', series( compileCSS, streamServer ) );
+  watch( './src/js/**/*.js', series( compileJS, refreshServer ) );
+  watch( './src/assets/', series( copyAssets, refreshServer ) );
+  watch( './src/vendor/', series( compileCSS, copyVendorScripts, refreshServer ) );
+  watch( [ './src/img/**/**.{jpg,jpeg,png,gif,webp}' ], series( copyRasterGraphics, refreshServer ) );
+  watch( [ './src/img/**/**.svg', '!./src/img/sprite/**.svg' ], series( copyVectorGraphics, refreshServer ) );
+  watch( './src/img/sprite/**.svg', series( compileSprite, refreshServer ) );
 };
 
-function webServer(cb) {
-  browserSync(config);
-  cb();
-}
+const processBuild = parallel(
+  copyAssets,
+  compileHTML,
+  compileCSS,
+  copyVendorScripts,
+  compileJS,
+  copyRasterGraphics,
+  copyVectorGraphics,
+  compileSprite,
+);
 
-function watchFiles(cb) {
-  watch('./src/*.html', html);
-  watch('./src/blocks/*.html', html);
-  watch('./src/**/*.scss', styles);
-  watch('./src/main.js', js);
-  watch('./src/files/**/*', files);
-  cb();
-}
+const processDevelopment = series( cleanBuildFolder, processBuild, syncServer );
 
-exports.default = series(webServer, watchFiles);
-exports.build = series(files, html, styles, js);
-exports.wpJs = wpJs;
-exports.wpScss = wpScss;
+const processProduction = series( cleanBuildFolder, processBuild, optimizeVendorStyles );
+
+export default processDevelopment;
+export {
+  cleanBuildFolder as clean,
+  processProduction as prod,
+};
