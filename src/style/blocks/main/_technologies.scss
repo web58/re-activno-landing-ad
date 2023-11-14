@@ -1,0 +1,53 @@
+.technologies {
+  padding-top: 50px;
+  padding-bottom: 50px;
+
+  &__title {
+    margin-bottom: 20px;
+  }
+
+  &__descr {
+    margin-bottom: 40px;
+  }
+
+  @include media-min ($md) {
+    padding-top: 100px;
+    padding-bottom: 100px;
+
+    &__title {
+      margin-bottom: 30px;
+    }
+
+    &__descr {
+      margin-bottom: 60px;
+    }
+
+    &__item-logo {
+      & img {
+        display: block;
+        width: 100%;
+      }
+    }
+  }
+
+  @include media-min ($xl) {
+    position: relative;
+
+    &::before {
+      content: '';
+      position: absolute;
+      right: 0;
+      top: 100px;
+      bottom: 100px;
+      width: 45%;
+      background-image: url('../img/technologies-bg.svg');
+      background-repeat: no-repeat;
+      background-size: cover;
+      pointer-events: none;
+    }
+
+    &__descr {
+      margin-bottom: 70px;
+    }
+  }
+}

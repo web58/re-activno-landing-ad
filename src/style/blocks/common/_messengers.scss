@@ -1,0 +1,34 @@
+.messengers {
+  @include list-reset;
+
+  display: flex;
+  margin: -5px;
+
+  &>li {
+    margin: 5px;
+
+    &>a {
+      display: flex;
+    }
+
+    & span {
+      @include visually-hidden;
+    }
+  }
+
+  @include media-min ($xl) {
+    margin: -10px;
+
+    &>li {
+      margin: 10px;
+
+      &>a {
+        transition: transform .15s ease-in-out;
+
+        &:hover {
+          transform: scale(1.23);
+        }
+      }
+    }
+  }
+}

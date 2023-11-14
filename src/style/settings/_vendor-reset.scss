@@ -1,0 +1,59 @@
+.hystmodal__window {
+  margin: 15px;
+}
+
+.swiper-slide {
+  height: var(--swiper-height, 100%);
+}
+
+.b24-form,
+.b24-form-content,
+.b24-window-popup {
+  --b24-primary-color: var(--btn-main);
+  --b24-primary-hover-color: var(--accent-70);
+  ;
+
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}
+
+.b24-form-btn {
+  border-radius: 99em !important;
+}
+
+.b24-form-control-alert-message {
+  z-index: 1 !important;
+  left: 40px !important;
+}
+
+.b24-form-control-string .b24-form-control {
+  border-radius: 99em !important;
+  padding: 14px 28px !important;
+}
+
+.b24-form-control-string .b24-form-control-label {
+  left: 18px !important;
+}
+
+.b24-form-control:focus+.b24-form-control-label {
+  top: 0 !important;
+}
+
+.b24-window-popup-wrapper {
+  padding: 30px 15px 0;
+  margin-left: 15px;
+  margin-right: 15px;
+  border-radius: 20px;
+
+  @include media-min ($md) {
+    padding: 40px 30px;
+  }
+}
+
+.b24-window-scrollable {
+  @include custom-scroll;
+
+  --scrollbar-thumb: var(--accent);
+
+  padding-right: 8px;
+}

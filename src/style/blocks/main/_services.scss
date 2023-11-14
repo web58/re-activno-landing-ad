@@ -1,0 +1,36 @@
+.services {
+  padding: 0;
+  list-style: none;
+
+  &__item {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    padding: 10px;
+    text-align: center;
+    border-radius: 10px;
+    box-shadow: var(--shadow-card);
+  }
+
+  &__label {
+    flex-grow: 1;
+  }
+
+  &__icons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80px;
+
+    &>img {
+      display: block;
+      flex-basis: 100%;
+    }
+  }
+
+  @include media-min ($xl) {
+    &__item {
+      padding: 30px 10px;
+    }
+  }
+}

@@ -1,0 +1,10 @@
+.case-list {
+  &__item {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__label {
+    margin-bottom: 5px;
+  }
+}

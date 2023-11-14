@@ -1,0 +1,11 @@
+.video-message {
+  &__title {
+    margin-bottom: 30px;
+  }
+
+  @include media-min ($xl) {
+    &__title {
+      margin-bottom: 50px;
+    }
+  }
+}

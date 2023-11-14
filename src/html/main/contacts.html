@@ -1,0 +1,47 @@
+<section class="contacts"
+         id="our-contacts">
+  <div class="container">
+    <div class="contacts__grid">
+      <div class="contacts__grid-item contacts__grid-item--main">
+        <h2 class="indent-reset title-2">Контакты</h2>
+        <div class="contacts__slogan">Работаем по всей России!</div>
+        <div class="contacts__mobile-contacts">
+          @include('office-contact.html')
+        </div>
+        <div>
+          <div class="contacts__label">e-mail</div>
+          <div class="title-3 contacts__icon-item contacts__icon-item--email"><a href="mailto:info@re-activno.ru">info@re-activno.ru</a></div>
+        </div>
+        <div>
+          <div class="contacts__label">Мы в соцсетях</div>
+          <ul class="messengers">
+            <li>
+              @include('../common/icon-link.html', {icon: 'icon-vk',width: '48', height: '48', text: 'Мы в VK', link: 'https://vk.com/reactivno'})
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="contacts__grid-item contacts__grid-item--xl">
+        @include('office-contact.html')
+      </div>
+      <div class="contacts__grid-item contacts__grid-item--xl contacts__grid-item--cb">
+        <div class="contacts__cb">
+          <h3 class="indent-reset title-3">Остались вопросы?</h3>
+          <div>Можете написать нам, мы ответим на все интересующие Вас вопросы о контекстной рекламе</div>
+          @include('../modal/ask.html')
+          <button class="btn"
+                  type="button"
+                  onclick="ym(86177565,'reachGoal','contact_click_quest'); return true;">Задать вопрос</button>
+        </div>
+      </div>
+      <div class="contacts__grid-item contacts__grid-item--no-offset contacts__grid-item--map">
+        <div class="contacts__map">
+          <script type="text/javascript"
+                  charset="utf-8"
+                  async
+                  src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3Ae54c6c61353c4fb877d8aff8ecb6a8c1f9857031d1ed52d157cb85082d2a505a&amp;width=1200&amp;height=720&amp;lang=ru_RU&amp;scroll=false"></script>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

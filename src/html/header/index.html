@@ -1,0 +1,55 @@
+<header class="site__header site-header">
+  <div class="header-top">
+    <div class="container">
+      <div class="header-top__inner">
+        <div class="header-top__logo">
+          <img src="img/sprite.svg#logo"
+               width="132"
+               height="40"
+               alt="Re:activno">
+        </div>
+        <div class="header-top__cb">
+          <div class="text-b header-top__phone">
+            @include('../common/main-phone.html')
+          </div>
+          <div class="header-top__messengers">
+            @include('../common/messengers.html')
+          </div>
+          @include('../modal/ask.html')
+          <button class="btn btn--2 header-top__modal-btn"
+                  type="button"
+                  onclick="ym(86177565,'reachGoal','header_click_question'); return true;">Задать вопрос</button>
+        </div>
+        <div class="header-top__burger">
+          <button class="just-burger"
+                  type="button"
+                  aria-label="Меню"
+                  id="just-burger">
+            <svg class="just-burger__icon"
+                 width="30"
+                 viewBox="0 0 50 50"
+                 aria-hidden="true">
+              <path class="just-burger__line just-burger__line--top"
+                    d="M7 9.5H43.2105C46.5807 9.5 50 12.2586 50 17.0692C50 21.8798 47.5313 24.5 43.2105 24.5H25" />
+              <path class="just-burger__line just-burger__line--middle"
+                    d="m 7,25 h 36" />
+              <path class="just-burger__line just-burger__line--bottom"
+                    d="M43 40.5H6.78947C6.78947 40.5 0 39.7451 0 32.6264C0 25.5076 6.78947 24.5 6.78947 24.5H25" />
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <nav class="header-bottom">
+    <div class="container">
+      @include('nav-list.html')
+    </div>
+  </nav>
+  @include('modal.html')
+  <nav class="site-header__fixed">
+    <div class="container">
+      @include('nav-list.html')
+    </div>
+  </nav>
+</header>

@@ -1,0 +1,32 @@
+.cases {
+  padding-top: 50px;
+  padding-bottom: 50px;
+
+  &__title {
+    margin-bottom: 40px;
+    text-align: center;
+  }
+
+  &__controls {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 25px;
+    color: var(--accent);
+  }
+
+  @include media-min ($md) {
+    padding-top: 100px;
+    padding-bottom: 100px;
+
+    &__title {
+      margin-bottom: 50px;
+    }
+  }
+
+  @include media-min ($xl) {
+    &__title {
+      margin-bottom: 70px;
+    }
+  }
+}

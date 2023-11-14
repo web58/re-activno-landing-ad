@@ -1,0 +1,29 @@
+User-agent: *
+Allow: /*.png
+Allow: /*.jpg
+Allow: /*.jpeg
+Allow: /*.svg
+Allow: /*.webp
+Allow: /*.js
+Allow: /*.css
+
+User-agent: Googlebot
+Allow: /*.png
+Allow: /*.jpg
+Allow: /*.jpeg
+Allow: /*.svg
+Allow: /*.webp
+Allow: /*.js
+Allow: /*.css
+
+User-agent: Yandex
+Allow: /*.png
+Allow: /*.jpg
+Allow: /*.jpeg
+Allow: /*.svg
+Allow: /*.webp
+Allow: /*.js
+Allow: /*.css
+
+Host: https://ad.re-activno.ru/
+Sitemap: https://ad.re-activno.ru/sitemap.xml

@@ -1,0 +1,50 @@
+.just-burger {
+  display: flex;
+  width: 40px;
+  padding: var(--burger-offset, 0);
+  cursor: pointer;
+  color: var(--burger-color, var(--accent));
+  border: none;
+  background-color: transparent;
+  overflow: hidden;
+
+  &__icon {
+    width: 100%;
+    user-select: none;
+    transform: var(--burger-position, none);
+    transition: transform var(--burger-animation-time, 0.4s);
+    pointer-events: none;
+  }
+
+  &__line {
+    transition: stroke-dasharray var(--burger-animation-time, 0.4s), stroke-dashoffset var(--burger-animation-time, 0.4s);
+    fill: none;
+    stroke: currentColor;
+    stroke-width: var(--burger-weight, 4.5);
+    stroke-linecap: round;
+
+    &--top {
+      stroke-dasharray: 36px 145px;
+      stroke-dashoffset: var(--burger-dashoffset, 0);
+    }
+
+    &--middle {
+      stroke-dasharray: 36px 145px;
+      transform: var(--burger-middle-position, none);
+      transform-origin: 50%;
+      transition: transform var(--burger-animation-time, 0.4s);
+    }
+
+    &--bottom {
+      stroke-dasharray: 36px 145px;
+      stroke-dashoffset: var(--burger-dashoffset, 0);
+      transform-origin: 50%;
+    }
+  }
+
+  &--open {
+    --burger-dashoffset: -59px;
+    --burger-middle-position: rotate(90deg);
+    --burger-position: rotate(135deg);
+  }
+}

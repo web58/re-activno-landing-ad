@@ -1,0 +1,177 @@
+.problems {
+  padding-top: 50px;
+  padding-bottom: 50px;
+  overflow: hidden;
+
+  &__title {
+    margin-bottom: 30px;
+  }
+
+  &__list {
+    @include list-reset;
+
+    margin-bottom: 50px;
+    counter-reset: problems;
+
+    & li {
+      display: flex;
+      counter-increment: problems;
+      margin-bottom: 20px;
+      border-top: 1px solid var(--border);
+
+      &::before {
+        @include set-font(30px, 1.2, 700);
+
+        content: '0'counter(problems);
+        letter-spacing: -0.9px;
+        color: var(--accent);
+        opacity: 0.3;
+        margin-right: 20px;
+      }
+
+      & span {
+        padding: 5px 0;
+      }
+    }
+  }
+
+  &__form {
+    position: relative;
+    padding-top: 50px;
+    padding-bottom: 50px;
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100vw;
+      bottom: 0;
+      width: 200vw;
+      background-color: var(--bright-block-bg);
+      z-index: 0;
+    }
+  }
+
+  &__form-wrapper {
+    position: relative;
+    color: var(--bright-block-text);
+    border-radius: 15px;
+  }
+
+  &__form-subtitle {
+    margin-bottom: 30px;
+  }
+
+  &__form-content {
+    color: var(--main-text);
+    background-color: var(--main-bg);
+    padding: 30px 20px;
+    border-radius: 15px;
+    box-shadow: var(--shadow-block);
+    max-width: 510px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  &__resume {
+    padding-top: 50px;
+  }
+
+
+  @include media-min ($md) {
+    padding-bottom: 100px;
+
+    &__title {
+      margin-bottom: 50px;
+      text-align: center;
+    }
+
+    &__list {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      row-gap: 40px;
+      column-gap: 30px;
+
+      & li {
+        border-top: none;
+        margin-bottom: 0;
+
+        &::before {
+          --text-fz: 40px;
+        }
+      }
+    }
+
+    &__form {
+      padding-top: 100px;
+      padding-bottom: 100px;
+    }
+
+    &__form-subtitle {
+      text-align: center;
+    }
+
+    &__form-content {
+      padding: 30px 80px;
+    }
+
+    &__resume {
+      padding-top: 100px;
+    }
+  }
+
+  @include media-min ($xl) {
+    &__list {
+      margin-top: 40px;
+
+      & li {
+        &::before {
+          --text-fz: 60px;
+        }
+
+        & span {
+          padding: 10px 0;
+        }
+      }
+    }
+
+    &__form-subtitle {
+      margin-bottom: 50px;
+    }
+  }
+
+  @include media-min ($xxl) {
+    padding-bottom: 70px;
+
+    &__list {
+      margin-top: 70px;
+    }
+
+    &__form {
+      padding-top: 70px;
+      padding-bottom: 0;
+      padding-left: 160px;
+
+      &::before {
+        left: 0;
+        background-image: url('../img/problems-form-bg.svg');
+        background-repeat: no-repeat;
+        background-size: contain;
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 320px 100%);
+      }
+    }
+
+    &__form-subtitle {
+      text-align: left;
+    }
+
+    &__form-content {
+      margin-left: 0;
+    }
+
+    &__resume {
+      padding-top: 160px;
+
+    }
+  }
+}

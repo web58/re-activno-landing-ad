@@ -1,0 +1,96 @@
+body {
+  font-size: 16px;
+  line-height: 1.4;
+  font-weight: 400;
+  font-family: $main-font, Arial, Helvetica, sans-serif;
+  color: var(--main-text);
+  background-color: var(--main-bg);
+}
+
+b,
+strong {
+  letter-spacing: -0.48px;
+}
+
+.text-sm {
+  @include set-font(14px, 1.4, 400);
+}
+
+.text-b {
+  font-weight: 700;
+  letter-spacing: -0.48px;
+}
+
+.is-accent {
+  color: var(--accent);
+}
+
+.title-1 {
+  @include set-font(30px, 1.2, 700);
+
+  text-transform: uppercase;
+  letter-spacing: -0.9px;
+}
+
+.title-2 {
+  @include set-font(22px, 1.2, 700);
+
+  text-transform: uppercase;
+  letter-spacing: -0.66px;
+}
+
+.title-3 {
+  @include set-font(22px, 1.2, 700);
+
+  letter-spacing: -0.66px;
+}
+
+@include media-min ($md) {
+  body {
+    font-size: 20px;
+  }
+
+  b,
+  strong,
+  .text-b {
+    letter-spacing: -0.6px;
+  }
+
+  .title-1 {
+    --text-fz: 40px;
+
+    letter-spacing: -1.2px;
+  }
+
+  .title-2 {
+    --text-fz: 30px;
+
+    letter-spacing: -0.9px;
+  }
+
+  .title-3 {
+    --text-fz: 25px;
+
+    letter-spacing: -0.75px;
+  }
+}
+
+@include media-min ($xl) {
+  .title-1 {
+    --text-fz: 60px;
+
+    letter-spacing: -1.8px;
+  }
+
+  .title-2 {
+    --text-fz: 40px;
+
+    letter-spacing: -1.2px;
+  }
+
+  .title-3 {
+    --text-fz: 30px;
+
+    letter-spacing: -0.9px;
+  }
+}

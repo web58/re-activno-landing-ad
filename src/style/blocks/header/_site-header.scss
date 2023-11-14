@@ -1,0 +1,29 @@
+.site-header {
+  &__fixed {
+    display: none;
+  }
+
+  @include media-min ($xl) {
+    box-shadow: var(--shadow-bt);
+
+    &.is-sticky {
+      --visible: block;
+    }
+
+    &__fixed {
+      position: fixed;
+      top: -1px;
+      left: 0;
+      right: 0;
+      z-index: 2;
+      width: 100%;
+      color: var(--black);
+      background-color: var(--white);
+      padding-top: 10px;
+      display: var(--visible, none);
+      box-shadow: var(--shadow-bt);
+
+      @include anim(fade-down, .3s);
+    }
+  }
+}

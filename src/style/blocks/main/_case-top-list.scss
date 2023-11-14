@@ -1,0 +1,26 @@
+.case-top-list {
+  &__item {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+  }
+
+  &__value {
+    text-align: right;
+    flex-shrink: 0;
+    margin-left: 20px;
+    text-transform: uppercase;
+  }
+
+  @include media-min ($md) {
+    &__item {
+      flex-direction: column;
+    }
+
+    &__value {
+      text-align: left;
+      margin-left: 0;
+      margin-top: 5px;
+    }
+  }
+}

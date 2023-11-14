@@ -1,0 +1,177 @@
+.includes-tabs {
+  &__nav {
+    position: relative;
+
+    &::after {
+      content: '';
+      position: absolute;
+      top: 35px;
+      left: 0;
+      z-index: 0;
+      width: 100%;
+      height: 2px;
+      background-image: repeating-linear-gradient(to right,
+          currentColor 0 20px,
+          transparent 20px 40px);
+    }
+  }
+
+  &__nav-wrapper {
+    @include custom-scroll;
+
+    --scrollbar-thumb: currentColor;
+
+    padding: 20px 0;
+    margin-bottom: 30px;
+    overflow-x: auto;
+  }
+
+  &__nav-list {
+    @include list-reset;
+
+    display: flex;
+  }
+
+  &__nav-btn {
+    @include btn-reset;
+
+    position: relative;
+    font-size: 22px;
+    font-weight: 700;
+    text-transform: uppercase;
+    margin: 0 25px;
+    padding-top: 50px;
+    outline: none;
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 30px;
+      height: 30px;
+      background-color: currentColor;
+      border-radius: 50%;
+      z-index: 1;
+      transition: background-color .2s ease-in-out, box-shadow .2s ease-in-out;
+    }
+
+    &.is-changed {
+      &::before {
+        background-color: var(--accent);
+        box-shadow: 0 0 0 10px currentColor;
+      }
+
+      &>span {
+        transform: scale(1.25);
+      }
+    }
+
+    &>span {
+      display: inline-block;
+      transition: transform .2s ease-in-out;
+    }
+  }
+
+  &__panel {
+    @include cms-text;
+
+    font-size: 16px;
+    width: 100%;
+    height: 400px;
+    overflow-y: auto;
+    color: var(--main-text);
+    background-color: var(--main-bg);
+    padding: 30px 20px;
+    border-radius: 25px;
+    box-shadow: var(--shadow-block);
+
+    h3 {
+      @include set-font(22px, 1.2, 700);
+
+      letter-spacing: -0.66px;
+    }
+
+    ul {
+      padding-left: 20px;
+
+      ::marker {
+        color: var(--accent);
+        font-size: 20px;
+      }
+    }
+
+    footer {
+      text-transform: uppercase;
+      font-size: 20px;
+    }
+  }
+
+  &__switchers {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 0;
+  }
+
+  &__switcher {
+    padding: 10px 0 5px;
+    margin: 0 10px;
+  }
+
+  @include media-min ($md) {
+    &__nav {
+      &::after {
+        display: none;
+      }
+    }
+
+    &__nav-wrapper {
+      padding: 0;
+      margin-bottom: 0;
+      overflow-x: visible;
+    }
+
+    &__nav-list {
+      position: relative;
+      flex-direction: column;
+      justify-content: flex-start;
+      margin-top: 10px;
+
+      &::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 15px;
+        z-index: 0;
+        width: 2px;
+        height: 100%;
+        background-image: repeating-linear-gradient(to bottom,
+            currentColor 0 20px,
+            transparent 20px 40px);
+      }
+    }
+
+    &__nav-btn {
+      font-size: 22px;
+      margin: 40px 0;
+      padding-top: 0;
+      padding-left: 50px;
+
+      &>span {
+        transform-origin: left center;
+      }
+    }
+
+    &__panel {
+      height: auto;
+      overflow-y: visible;
+      padding: 50px 30px;
+      border-radius: 25px;
+    }
+
+    &__switchers {
+      display: none;
+    }
+  }
+}

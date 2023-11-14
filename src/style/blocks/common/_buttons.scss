@@ -1,0 +1,55 @@
+.btn {
+  @include btn-reset;
+  @include set-font(16px, 1.3, 700);
+
+  --btn-text: var(--btn-alt);
+  --btn-bg: var(--btn-main);
+  --btn-border: var(--btn-main);
+
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  padding: var(--btn-offset, var(--btn-offset-vertical, 10px) var(--btn-offset-horizontal, 14px));
+  color: var(--btn-text);
+  background-color: var(--btn-bg);
+  border: 1px solid var(--btn-border);
+  border-radius: 99em;
+  text-decoration: none;
+
+  & svg {
+    margin-right: 12px;
+  }
+
+  &--icon-reverse {
+    & svg {
+      margin-right: 0;
+      margin-left: 12px;
+    }
+  }
+
+  &--2 {
+    --btn-text: var(--btn-main);
+    --btn-bg: var(--btn-alt);
+  }
+
+  @include media-min ($md) {
+    --text-fz: 18px;
+  }
+
+  @include media-min ($xl) {
+    transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out;
+
+    &:hover {
+      --btn-text: var(--btn-main);
+      --btn-bg: var(--btn-alt);
+    }
+
+    &--2 {
+      &:hover {
+        --btn-text: var(--btn-alt);
+        --btn-bg: var(--btn-main);
+        --btn-border: currentColor;
+      }
+    }
+  }
+}

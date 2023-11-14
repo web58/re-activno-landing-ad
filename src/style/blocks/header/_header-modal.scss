@@ -1,0 +1,57 @@
+.header-modal {
+  position: fixed;
+  top: var(--offset-top, 0);
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 2;
+  display: none;
+
+  &__content {
+    position: fixed;
+    top: var(--offset-top, 0);
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1;
+    width: 100%;
+    color: var(--black);
+    background-color: var(--white);
+    overflow: auto;
+    padding-top: 30px;
+    padding-bottom: 50px;
+    text-align: center;
+
+    @include anim(fade, .3s);
+  }
+
+  &__cb {
+    padding-top: 30px;
+    display: grid;
+    justify-items: center;
+    row-gap: 20px;
+  }
+
+  &__phone {
+    font-size: 26px;
+    font-weight: 700;
+  }
+
+  &__modal-btn {
+    --btn-offset: 14px 40px;
+  }
+
+  @include media-min ($md) {
+    &__messengers {
+      display: none;
+    }
+
+    &__modal-btn {
+      display: none;
+    }
+  }
+
+  @include media-min ($xl) {
+    display: none !important;
+  }
+}

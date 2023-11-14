@@ -1,0 +1,110 @@
+.main-first {
+  &__top {
+    padding-top: 50px;
+    padding-bottom: 50px;
+  }
+
+
+  &__top-wrapper {
+    max-width: 460px;
+  }
+
+  &__top-descr {
+    margin-top: 30px;
+    margin-bottom: 50px;
+  }
+
+  &__top-btn {
+    --btn-offset: 16px;
+
+    width: 100%;
+  }
+
+  &__bottom {
+    padding-top: 50px;
+    padding-bottom: 50px;
+  }
+
+  &__bottom-descr {
+    margin-top: 30px;
+    margin-bottom: 0;
+
+    & span {
+      text-transform: uppercase;
+    }
+  }
+
+  @include media-min ($md) {
+    &__top {
+      position: relative;
+      padding-bottom: 0;
+    }
+
+    &__top-decor {
+      position: absolute;
+      right: 0;
+      top: 0;
+      width: 50%;
+      height: 100%;
+      pointer-events: none;
+      background-image: url('../img/first-red.svg');
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+
+    &__top-wrapper {
+      position: relative;
+      z-index: 1;
+    }
+
+    &__top-btn {
+      width: auto;
+    }
+
+    &__bottom {
+      position: relative;
+      padding-top: 200px;
+      padding-bottom: 70px;
+    }
+
+    &__bottom-wrapper {
+      position: relative;
+      z-index: 1;
+    }
+
+    &__bottom-decor {
+      position: absolute;
+      right: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      background-color: #FFFAF0;
+      clip-path: polygon(50% 0, 100% 0, 100% 100%, 0 100%, 0 30%);
+    }
+  }
+
+  @include media-min ($xl) {
+    &__top {
+      padding-top: 100px;
+    }
+
+    &__top-wrapper {
+      max-width: none;
+    }
+
+    &__bottom {
+      padding-top: 140px;
+    }
+
+    &__bottom-decor {
+      clip-path: polygon(50% 0, 100% 0, 100% 100%, 0 100%, 0 50%);
+    }
+  }
+
+  @include media-min ($xxl) {
+    &__bottom-wrapper {
+      max-width: 650px;
+    }
+  }
+}

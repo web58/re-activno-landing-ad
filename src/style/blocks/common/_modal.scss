@@ -1,0 +1,50 @@
+.modal {
+  position: relative;
+  margin: 0 auto;
+  padding: 40px 24px;
+  width: 100%;
+  max-width: 330px;
+  color: var(--modal-text, var(--main-text));
+  background-color: var(--modal-bg, var(--main-bg));
+  border-radius: 10px;
+
+  &--page {
+    max-width: none;
+  }
+
+  &__close {
+    @include btn-reset;
+
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: var(--modal-icon-size, var(--modal-icon-width, 32px));
+    height: var(--smodal-icon-size, var(--modal-icon-height, 32px));
+    color: var(--modal-icon-color, currentColor);
+  }
+
+  &__page {
+    @include cms-text;
+  }
+
+  @include media-min ($md) {
+    &--page {
+      max-width: 690px;
+    }
+  }
+
+  @include media-min ($lg) {
+    &--page {
+      max-width: 960px;
+    }
+  }
+
+  @include media-min ($xl) {
+    &--page {
+      max-width: 1110px;
+    }
+  }
+}

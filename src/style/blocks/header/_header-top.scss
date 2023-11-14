@@ -1,0 +1,91 @@
+.header-top {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  z-index: 3;
+  padding: 6px 0;
+  color: var(--main-text);
+  background-color: var(--main-bg);
+  box-shadow: var(--shadow-bt);
+
+  &__inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &__logo {
+    & img {
+      display: block;
+      width: 132px;
+      height: 40px;
+    }
+  }
+
+  &__cb {
+    display: none;
+  }
+
+  @include media-min ($md) {
+    padding: 10px 0;
+
+    &__logo {
+      & img {
+        width: 170px;
+        height: 52px;
+      }
+    }
+
+    &__cb {
+      display: flex;
+      align-items: center;
+      margin-left: auto;
+    }
+
+    &__burger {
+      margin-left: 15px;
+    }
+
+    &__phone {
+      display: none;
+    }
+
+    &__modal-btn {
+      --btn-offset-horizontal: 40px;
+
+      margin-left: 15px;
+    }
+  }
+
+  @include media-min ($xl) {
+    position: static;
+    box-shadow: none;
+
+    &__burger {
+      display: none;
+    }
+
+    &__phone {
+      display: block;
+
+      & a {
+        color: inherit;
+        transition: color 0.15s ease-in-out, text-decoration-color 0.15s ease-in-out;
+
+        &:hover {
+          color: var(--accent);
+          text-decoration-color: var(--accent);
+        }
+      }
+    }
+
+    &__messengers {
+      margin-left: 20px;
+    }
+
+    &__modal-btn {
+      margin-left: 50px;
+    }
+  }
+}

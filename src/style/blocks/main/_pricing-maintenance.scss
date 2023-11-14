@@ -1,0 +1,116 @@
+.pricing-maintenance {
+  padding-top: 50px;
+  padding-bottom: 50px;
+
+  &__title {
+    margin-bottom: 40px;
+    text-align: center;
+  }
+
+  &__list {
+    @include list-reset;
+
+    margin-bottom: 50px;
+    counter-reset: maintenance;
+
+    & li {
+      display: flex;
+      counter-increment: maintenance;
+      margin-bottom: 20px;
+      border-top: 1px solid var(--border);
+
+      &::before {
+        @include set-font(30px, 1.2, 700);
+
+        content: '0'counter(maintenance);
+        letter-spacing: -0.9px;
+        opacity: 0.3;
+        margin-right: 20px;
+      }
+
+      & span {
+        padding: 5px 0;
+      }
+    }
+  }
+
+  &__resume {
+    text-align: center;
+  }
+
+  &__total {
+    font-size: 22px;
+    font-weight: 700;
+    letter-spacing: -0.66px;
+
+    & span {
+      font-size: 30px;
+    }
+  }
+
+  &__note {
+    margin: 0 auto;
+    margin-bottom: 30px;
+    opacity: 0.5;
+    max-width: 300px;
+  }
+
+  @include media-min ($md) {
+    padding-top: 100px;
+    padding-bottom: 100px;
+
+    &__title {
+      margin-bottom: 50px;
+    }
+
+    &__list {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      row-gap: 40px;
+      column-gap: 30px;
+
+      & li {
+        border-top: none;
+        margin-bottom: 0;
+
+        &::before {
+          --text-fz: 40px;
+        }
+      }
+    }
+
+    &__total {
+      font-size: 25px;
+
+      & span {
+        font-size: 60px;
+      }
+    }
+  }
+
+  @include media-min ($xl) {
+    &__title {
+      margin-bottom: 70px;
+    }
+
+    &__list {
+      grid-template-columns: repeat(3, 1fr);
+
+      & li {
+        &::before {
+          --text-fz: 60px;
+        }
+
+        & span {
+          padding: 10px 0;
+        }
+      }
+    }
+  }
+
+  @include media-min ($xxl) {
+    &__list {
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
+}

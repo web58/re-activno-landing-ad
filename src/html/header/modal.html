@@ -1,0 +1,21 @@
+<div class="header-modal">
+  <div class="header-modal__content">
+    <div class="container">
+      <nav>
+        @include('nav-list.html')
+      </nav>
+      <div class="header-modal__cb">
+        <div class="header-modal__phone">
+          @include('../common/main-phone.html')
+        </div>
+        <div class="header-modal__messengers">
+          @include('../common/messengers.html')
+        </div>
+        @include('../modal/ask.html')
+        <button class="btn btn--2 header-modal__modal-btn"
+                type="button"
+                onclick="ym(86177565,'reachGoal','header_click_question'); return true;">Задать вопрос</button>
+      </div>
+    </div>
+  </div>
+</div>

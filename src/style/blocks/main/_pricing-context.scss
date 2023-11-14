@@ -1,0 +1,96 @@
+.pricing-context {
+  padding-top: 50px;
+  padding-bottom: 50px;
+
+  &__title {
+    margin-bottom: 40px;
+    text-align: center;
+
+    &>span {
+      display: block;
+    }
+  }
+
+  &__accent {
+    color: var(--bright-block-text);
+    background-color: var(--accent);
+    padding: 30px 20px;
+    border-radius: 15px;
+  }
+
+  &__subtitle {
+    margin-bottom: 20px;
+  }
+
+  &__total {
+    font-size: 22px;
+    font-weight: 700;
+    letter-spacing: -0.66px;
+    margin-bottom: 20px;
+
+    & span {
+      font-size: 30px;
+    }
+  }
+
+  &__note {
+    margin-bottom: 50px;
+    opacity: 0.7;
+  }
+
+  &__btn {
+    width: 100%;
+  }
+
+  &__list {
+    padding-left: 20px;
+
+    & li {
+      padding: 0.35em 0;
+    }
+
+    ::marker {
+      color: var(--accent);
+      font-size: 20px;
+    }
+  }
+
+  @include media-min ($md) {
+    padding-top: 100px;
+    padding-bottom: 100px;
+
+    &__title {
+      margin-bottom: 50px;
+
+      &>span {
+        display: inline;
+      }
+    }
+
+    &__accent {
+      padding: 50px;
+    }
+
+    &__total {
+      font-size: 25px;
+
+      & span {
+        font-size: 60px;
+      }
+    }
+  }
+
+  @include media-min ($lg) {
+    &__list {
+      margin: 0;
+    }
+  }
+
+  @include media-min ($xl) {
+    &__title {
+      &>span {
+        display: block;
+      }
+    }
+  }
+}

@@ -1,0 +1,212 @@
+.contacts {
+  padding-top: 50px;
+  padding-bottom: 30px;
+
+  &__grid {
+    display: grid;
+    gap: 30px;
+  }
+
+  &__grid-item {
+    display: grid;
+    row-gap: 30px;
+
+    &--xl {
+      display: none;
+    }
+  }
+
+  &__office {
+    display: grid;
+    row-gap: 30px;
+  }
+
+  &__label {
+    font-size: 16px;
+    opacity: 0.5;
+    margin-bottom: 10px;
+  }
+
+  &__icon-item {
+
+    &>a,
+    &>span {
+      position: relative;
+      padding-left: 32px;
+
+      &::before {
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: 0;
+        z-index: 1;
+        transform: translateY(-50%);
+        width: 22px;
+        height: 22px;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: contain;
+      }
+    }
+
+    &--email {
+      &>a {
+        &::before {
+          background-image: url("data:image/svg+xml,%3Csvg width='26' height='20' viewBox='0 0 26 20' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0.542762 1.62271C4.11116 4.72224 10.3726 10.1753 12.2129 11.8755C12.4599 12.105 12.7249 12.2217 13 12.2217C13.2745 12.2217 13.539 12.1061 13.7855 11.8777C15.6274 10.1758 21.8888 4.72224 25.4573 1.62271C25.6795 1.43011 25.7133 1.09156 25.5335 0.856094C25.1177 0.311979 24.4977 0 23.8333 0H2.16669C1.50232 0 0.882336 0.31198 0.46659 0.856147C0.286723 1.09156 0.320594 1.43011 0.542762 1.62271Z' fill='%23F6512C'/%3E%3Cpath d='M25.6858 3.30239C25.4938 3.21072 25.2679 3.2427 25.1081 3.3827C22.7711 5.41447 19.692 8.09896 17.3698 10.1476C17.2477 10.255 17.1789 10.4129 17.1815 10.5783C17.1842 10.7433 17.2588 10.899 17.3847 11.002C19.5424 12.7745 22.7939 15.2127 25.142 16.9455C25.2356 17.015 25.3467 17.0502 25.4583 17.0502C25.543 17.0502 25.6276 17.0302 25.7054 16.9889C25.8863 16.894 26 16.703 26 16.4946V3.8064C25.9999 3.58994 25.8772 3.39301 25.6858 3.30239Z' fill='%23F6512C'/%3E%3Cpath d='M0.857999 16.9455C3.20663 15.2127 6.45876 12.7746 8.61589 11.0021C8.74178 10.899 8.81638 10.7432 8.81902 10.5784C8.82166 10.4129 8.7529 10.255 8.63072 10.1476C6.3085 8.09898 3.22882 5.41449 0.89187 3.38272C0.731046 3.24272 0.504664 3.21184 0.314234 3.30241C0.122738 3.39304 0 3.58996 0 3.80642V16.4947C0 16.703 0.11375 16.894 0.294632 16.989C0.372378 17.0302 0.457031 17.0503 0.541683 17.0503C0.6533 17.0503 0.764359 17.015 0.857999 16.9455Z' fill='%23F6512C'/%3E%3Cpath d='M25.3361 18.457C23.0684 16.7931 18.8911 13.6909 16.3975 11.6151C16.1944 11.4453 15.9003 11.4507 15.7004 11.6276C15.2111 12.0654 14.8016 12.4344 14.5112 12.7023C13.6194 13.5281 12.3816 13.5281 11.4876 12.7012C11.1983 12.4338 10.7889 12.0637 10.2995 11.6275C10.1012 11.4496 9.80656 11.4442 9.60287 11.615C7.11774 13.6837 2.93571 16.7897 0.664317 18.457C0.537871 18.5503 0.456418 18.6941 0.440575 18.853C0.425239 19.012 0.476528 19.1698 0.582863 19.287C0.992871 19.7401 1.57051 20 2.16668 20H23.8333C24.4295 20 25.0066 19.7401 25.4176 19.2871C25.5234 19.1704 25.5752 19.0126 25.5599 18.8536C25.544 18.6947 25.4625 18.5504 25.3361 18.457Z' fill='%23F6512C'/%3E%3C/svg%3E%0A");
+        }
+      }
+    }
+
+    &--schedule {
+      &>span {
+        &::before {
+          background-image: url("data:image/svg+xml,%3Csvg width='26' height='26' viewBox='0 0 26 26' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M13 0C5.83151 0 0 5.83151 0 13C0 20.1685 5.83151 26 13 26C20.1685 26 26 20.1685 26 13C26 5.83151 20.1685 0 13 0ZM19.1826 19.7242C18.9714 19.9354 18.694 20.0417 18.4167 20.0417C18.1394 20.0417 17.8619 19.9354 17.6508 19.7242L12.2341 14.3076C12.0304 14.1051 11.9167 13.8298 11.9167 13.5417V6.5C11.9167 5.90094 12.4019 5.41673 13 5.41673C13.5981 5.41673 14.0833 5.90094 14.0833 6.5V13.0932L19.1826 18.1924C19.6061 18.6161 19.6061 19.3006 19.1826 19.7242Z' fill='%23F6512C'/%3E%3C/svg%3E%0A");
+        }
+      }
+    }
+
+    &--phone {
+      &>a {
+        &::before {
+          background-image: url("data:image/svg+xml,%3Csvg width='26' height='26' viewBox='0 0 26 26' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M23.9138 17.066C22.3219 17.066 20.759 16.8171 19.2778 16.3276C18.5521 16.0801 17.6599 16.3071 17.2169 16.7621L14.2935 18.969C10.9031 17.1592 8.81474 15.0715 7.02968 11.7066L9.17164 8.8593C9.72813 8.30355 9.92774 7.49172 9.68859 6.73001C9.19703 5.2411 8.94732 3.67886 8.94732 2.08636C8.94739 0.935932 8.01145 0 6.86109 0H2.0863C0.935932 0 0 0.935932 0 2.0863C0 15.2725 10.7276 26 23.9138 26C25.0641 26 26.0001 25.0641 26.0001 23.9137V19.1523C26 18.002 25.0641 17.066 23.9138 17.066Z' fill='%23F6512C'/%3E%3C/svg%3E");
+        }
+      }
+    }
+  }
+
+  &__schedule {
+    margin-bottom: 5px;
+  }
+
+  &__map {
+    position: relative;
+    border-radius: 30px;
+    overflow: hidden;
+    height: 380px;
+
+    &>iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 1;
+    }
+  }
+
+  @include media-min ($md) {
+    padding-top: 100px;
+    padding-bottom: 50px;
+
+    &__grid {
+      grid-template-columns: 5fr 7fr;
+    }
+
+    &__map {
+      height: 100%;
+    }
+  }
+
+  @include media-min ($xl) {
+    padding-bottom: 100px;
+
+    &__grid {
+      grid-template-columns: 5fr 8fr;
+      grid-template-rows: repeat(7, 1fr);
+      grid-auto-flow: dense;
+    }
+
+    &__grid-item {
+      grid-row: span 3;
+      padding: 40px;
+      border-radius: 30px;
+      box-shadow: var(--shadow-card);
+
+
+      &--xl {
+        display: block;
+      }
+
+      &--no-offset {
+        padding: 0;
+      }
+
+      &--main {
+        grid-row: span 4;
+      }
+
+      &--cb {
+        grid-column-start: 1;
+      }
+
+      &--map {
+        grid-column-start: 2;
+        grid-row: span 4;
+      }
+    }
+
+    &__cb {
+      display: grid;
+      row-gap: 20px;
+    }
+
+    &__icon-item {
+      &>a {
+        transition: text-decoration-color 0.15s ease-in-out;
+
+        &:hover {
+          text-decoration-color: var(--accent);
+        }
+      }
+    }
+
+    &__mobile-contacts {
+      display: none;
+    }
+  }
+
+  @include media-min ($xxl) {
+    &__grid {
+      grid-template-columns: 3fr 8fr;
+      grid-template-rows: repeat(4, 1fr);
+    }
+
+    &__grid-item {
+      grid-row: span 1;
+
+      &--main {
+        grid-row: span 2;
+      }
+
+      &--cb {
+        grid-row: span 2;
+      }
+
+      &--map {
+        grid-row: span 3;
+      }
+    }
+
+    &__office {
+      grid-template-columns: repeat(2, 1fr);
+      column-gap: 30px;
+    }
+
+    &__icon-item {
+
+      &>a,
+      &>span {
+        padding-left: 36px;
+
+        &::before {
+          width: 26px;
+          height: 26px;
+        }
+      }
+    }
+
+    &__cb {
+      row-gap: 40px;
+    }
+  }
+}

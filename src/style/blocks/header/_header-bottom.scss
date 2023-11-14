@@ -1,0 +1,7 @@
+.header-bottom {
+  display: none;
+
+  @include media-min ($xl) {
+    display: block;
+  }
+}

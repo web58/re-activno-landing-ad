@@ -1,0 +1,38 @@
+:root {
+  --white: #FFFFFF;
+  --yellow: #FFFAF0;
+  --gray: #DEDEDE;
+  --black: #272727;
+  --red100: #F6512C;
+  --orange: #F7AC4C;
+  --black-30: rgb(0, 0, 0, 0.3);
+  --black-50: rgba(39, 39, 39, 0.5);
+
+  // other vars
+  --min-site-width: 360px;
+  --max-site-width: 1590px;
+
+  // theme vars
+  --main-text: var(--black);
+  --main-bg: var(--white);
+  --secondary-text: var(--black-50);
+  --secondary-bg: var(--gray);
+  --bright-block-text: var(--white);
+  --bright-block-bg: var(--orange);
+  --accent: var(--red100);
+  --accent-70: rgba(246, 81, 44, 0.7);
+  --error: var(--red100);
+  --shadow-bt: 0 2px 16px 0 var(--black-30);
+  --shadow-block: 0 25px 60px 0 var(--black-30);
+  --shadow-card: 0 10px 100px 0 rgba(153, 153, 153, 0.10);
+  --btn-main: var(--red100);
+  --btn-alt: var(--white);
+  --border: var(--gray);
+}
+
+$sm: 576px;
+$md: 768px;
+$lg: 992px;
+$xl: 1200px;
+$xxl: 1600px;
+$main-font: "Ubuntu";
