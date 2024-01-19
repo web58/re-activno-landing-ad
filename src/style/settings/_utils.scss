@@ -40,3 +40,24 @@ input[type="checkbox"].visually-hidden {
 .custom-scroll {
   @include custom-scroll;
 }
+
+.item-pricing-border-right {
+  position: relative;
+
+  @include media-min ($lg) {
+    &::after {
+      content: '';
+      top: 0;
+      right: 0;
+      position: absolute;
+      height: 100%;
+      border-right: 2px solid rgba(0, 0, 0, 0.10);
+    }
+  }
+
+  @include media-min ($xxl) {
+    &::after {
+      right: 15px;
+    }
+  }
+}
