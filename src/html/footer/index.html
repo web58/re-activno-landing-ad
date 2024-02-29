@@ -3,14 +3,10 @@
     <div class="row">
       <div class="col-12 col-md-6 mb-4">
         <div class="footer__logo">
-          <a href="https://re-activno.ru"
-             target="_blank">
-            <img src="img/sprite.svg#logo"
-                 width="132"
-                 height="40"
-                 alt="Re:activno">
-          </a>
-
+          <img src="/include/landing-service-ad/img/sprite.svg#logo"
+               width="132"
+               height="40"
+               alt="Re:activno">
         </div>
       </div>
       <div class="col-12 col-md-6 col-xl-3 mb-4">
@@ -24,16 +20,14 @@
           <div>
             @include('../modal/ask.html')
             <button class="btn btn--2"
-                    type="button"
-                    onclick="ym(86177565,'reachGoal','footer_click_quest'); return true;">Задать вопрос</button>
+                    type="button">Задать вопрос</button>
           </div>
         </div>
       </div>
       <div class="col-12 col-md-6 col-xl-3 offset-md-6 offset-xl-0">
         <div class="footer__copyright footer__right-aligned">
           <div class="footer__policy">
-            <a href="#"
-               data-hystmodal="#policy-modal">Политика конфиденциальности</a>
+            <a href="#">Политика конфиденциальности</a>
           </div>
           <div>
             <a href="https://re-activno.ru/"
@@ -43,7 +37,7 @@
               <svg width="150"
                    height="16"
                    aria-hidden="true">
-                <use xlink:href="img/sprite.svg#icon-dev"></use>
+                <use xlink:href="/include/landing-service-ad/img/sprite.svg#icon-dev"></use>
               </svg>
             </a>
           </div>
@@ -53,4 +47,3 @@
   </div>
 </footer>
 @include('../common/scroll-top.html')
-@include('../modal/index.html')

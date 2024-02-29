@@ -41,9 +41,9 @@ const syncServer = () => {
   watch( './src/js/**/*.js', series( compileJS, refreshServer ) );
   watch( './src/assets/', series( copyAssets, refreshServer ) );
   watch( './src/vendor/', series( compileCSS, copyVendorScripts, refreshServer ) );
-  watch( [ './src/img/**/**.{jpg,jpeg,png,gif,webp}' ], series( copyRasterGraphics, refreshServer ) );
-  watch( [ './src/img/**/**.svg', '!./src/img/sprite/**.svg' ], series( copyVectorGraphics, refreshServer ) );
-  watch( './src/img/sprite/**.svg', series( compileSprite, refreshServer ) );
+  watch( [ './src/include/landing-service-ad/img/**/**.{jpg,jpeg,png,gif,webp}' ], series( copyRasterGraphics, refreshServer ) );
+  watch( [ './src/include/landing-service-ad/img/**/**.svg', '!./src/include/landing-service-ad/img/sprite/**.svg' ], series( copyVectorGraphics, refreshServer ) );
+  watch( './src/include/landing-service-ad/img/sprite/**.svg', series( compileSprite, refreshServer ) );
 };
 
 const processBuild = parallel(

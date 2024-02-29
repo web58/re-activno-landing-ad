@@ -7,17 +7,10 @@
     text-align: center;
   }
 
-  &__item {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    margin-bottom: 70px;
-  }
-
   &__list {
     @include list-reset;
 
-    margin-bottom: 30px;
+    margin-bottom: 50px;
     counter-reset: maintenance;
 
     & li {
@@ -27,18 +20,19 @@
       border-top: 1px solid var(--border);
 
       &::before {
-        @include set-font(20px, 1.2, 700);
+        @include set-font(30px, 1.2, 700);
 
         content: '0'counter(maintenance);
         letter-spacing: -0.9px;
         opacity: 0.3;
-        margin-right: 10px;
+        margin-right: 20px;
       }
 
-
+      & span {
+        padding: 5px 0;
+      }
     }
   }
-
 
   &__resume {
     text-align: center;
@@ -58,7 +52,7 @@
     margin: 0 auto;
     margin-bottom: 30px;
     opacity: 0.5;
-    max-width: 350px;
+    max-width: 300px;
   }
 
   @include media-min ($md) {
@@ -78,8 +72,10 @@
       & li {
         border-top: none;
         margin-bottom: 0;
-        max-width: 280px;
 
+        &::before {
+          --text-fz: 40px;
+        }
       }
     }
 
@@ -92,19 +88,29 @@
     }
   }
 
-  @include media-min ($lg) {
-    &__item {
-      margin-bottom: 0;
-    }
-  }
-
   @include media-min ($xl) {
     &__title {
       margin-bottom: 70px;
     }
 
+    &__list {
+      grid-template-columns: repeat(3, 1fr);
 
+      & li {
+        &::before {
+          --text-fz: 60px;
+        }
+
+        & span {
+          padding: 10px 0;
+        }
+      }
+    }
   }
 
-
+  @include media-min ($xxl) {
+    &__list {
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
 }

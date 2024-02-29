@@ -3,14 +3,6 @@ import {
 } from './modules/utils.js';
 
 import {
-  validateForms,
-} from './modules/validate.js';
-
-import {
-  initModals,
-} from './modules/modal.js';
-
-import {
   initHeaderSettings,
 } from './modules/header.js';
 
@@ -34,8 +26,6 @@ document.addEventListener( 'DOMContentLoaded', () => {
   iosVhFix();
 
   window.addEventListener( 'load', () => {
-    validateForms();
-    initModals();
     initSliders();
     initScrollTop();
     initHeaderSettings();

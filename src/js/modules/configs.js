@@ -19,31 +19,6 @@ const smoothScrollConfig = {
   updateURL: false,
 };
 
-const modalConfig = {
-  linkAttributeName: false,
-  catchFocus: true,
-  closeOnEsc: true,
-  backscroll: true,
-};
-
-const validateConfig = {
-  justValidate: {
-    errorFieldCssClass: 'is-invalid',
-    errorLabelStyle: {
-      color: 'var(--error)',
-      marginTop: '6px',
-      fontSize: '12px',
-      textAlign: 'left',
-    },
-    errorFormClass: 'shaked',
-    errorTimeout: 1500,
-  },
-  errorTimeout: 1500,
-  mask: {
-    bodyMask: ' (___) ___ __ __',
-  }
-};
-
 const observerConfig = {
   header: {
     rootMargin: '100px',
@@ -55,10 +30,6 @@ const observerConfig = {
   },
 };
 
-const requestsConfig = {
-  handlerURL: 'https://jsonplaceholder.typicode.com/posts',
-};
-
 const justBurgerConfig = {
   animationSpeed: 300,
   menuId: 'mobile-menu',
@@ -67,9 +38,6 @@ const justBurgerConfig = {
 export {
   sliderConfig,
   smoothScrollConfig,
-  modalConfig,
-  validateConfig,
   observerConfig,
-  requestsConfig,
   justBurgerConfig
 };

@@ -11,19 +11,19 @@ const {
 const isProd = process.env.NODE_ENV === 'production';
 
 const copyRasterGraphics = () => {
-  return src( [ './src/img/**/**.{jpg,jpeg,png,gif,webp}' ] )
+  return src( [ './src/include/landing-service-ad/img/**/**.{jpg,jpeg,png,gif,webp}' ] )
     .pipe( gulpIf( isProd, squoosh() ) )
-    .pipe( dest( './build/img/' ) );
+    .pipe( dest( './build/include/landing-service-ad/img/' ) );
 };
 
 const copyVectorGraphics = () => {
-  return src( [ './src/img/**/**.svg', '!./src/img/sprite/**.svg' ] )
+  return src( [ './src/include/landing-service-ad/img/**/**.svg', '!./src/include/landing-service-ad/img/sprite/**.svg' ] )
     .pipe( gulpIf( isProd, svgmin() ) )
-    .pipe( dest( './build/img/' ) );
+    .pipe( dest( './build/include/landing-service-ad/img/' ) );
 };
 
 const compileSprite = () => {
-  return src( './src/img/sprite/**.svg' )
+  return src( './src/include/landing-service-ad/img/sprite/**.svg' )
     .pipe( gulpIf( isProd, svgmin() ) )
     .pipe( svgSprite( {
       mode: {
@@ -32,7 +32,7 @@ const compileSprite = () => {
         }
       },
     } ) )
-    .pipe( dest( './build/img/' ) );
+    .pipe( dest( './build/include/landing-service-ad/img/' ) );
 }
 
 export {
