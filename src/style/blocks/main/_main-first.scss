@@ -1,4 +1,5 @@
 .main-first {
+
   &__top {
     padding-top: 50px;
     padding-bottom: 50px;
@@ -26,8 +27,8 @@
   }
 
   &__bottom-descr {
-    margin-top: 30px;
-    margin-bottom: 0;
+    margin-bottom: 30px;
+    max-width: 500px;
 
     & span {
       text-transform: uppercase;
@@ -38,6 +39,7 @@
     &__top {
       position: relative;
       padding-bottom: 0;
+      margin-bottom: 50px;
     }
 
     &__top-decor {
@@ -104,11 +106,31 @@
     &__bottom-decor {
       clip-path: polygon(50% 0, 100% 0, 100% 100%, 0 100%, 0 50%);
     }
+
   }
 
   @include media-min ($xxl) {
     &__bottom-wrapper {
       max-width: 650px;
+    }
+
+    &__bottom-descr {
+      max-width: 100%;
+    }
+  }
+}
+
+
+.marquiz {
+  &__container {
+    display: flex;
+    justify-content: center;
+  }
+
+
+  @include media-min ($md) {
+    &__container {
+      justify-content: flex-start;
     }
   }
 }

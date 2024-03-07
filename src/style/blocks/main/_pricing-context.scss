@@ -6,7 +6,7 @@
     margin-bottom: 40px;
     text-align: center;
 
-    &>span {
+    & > span {
       display: block;
     }
   }
@@ -16,17 +16,26 @@
     background-color: var(--accent);
     padding: 30px 20px;
     border-radius: 15px;
+    margin-bottom: 30px;
+    max-width: 645px;
+  }
+
+  &__info-block {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
   }
 
   &__subtitle {
-    margin-bottom: 20px;
+    margin-bottom: 10px;
   }
 
   &__total {
     font-size: 22px;
     font-weight: 700;
     letter-spacing: -0.66px;
-    margin-bottom: 20px;
+    flex-shrink: 0;
 
     & span {
       font-size: 30px;
@@ -36,6 +45,11 @@
   &__note {
     margin-bottom: 50px;
     opacity: 0.7;
+
+    &--top {
+      margin-bottom: 20px;
+      opacity: 1;
+    }
   }
 
   &__btn {
@@ -62,7 +76,7 @@
     &__title {
       margin-bottom: 50px;
 
-      &>span {
+      & > span {
         display: inline;
       }
     }
@@ -86,11 +100,5 @@
     }
   }
 
-  @include media-min ($xl) {
-    &__title {
-      &>span {
-        display: block;
-      }
-    }
-  }
+
 }
